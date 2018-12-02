@@ -23,16 +23,16 @@
 (def n '(-6 3 8 5 -6))
 
 (defn part2 [nums]
-(loop [ [car & cdr ] (flatten (repeat nums))
-       freq 0
-       s #{}
-       ]
- (if (contains? s freq)
-    freq
-    (recur cdr (+ freq car) (conj s freq )))
+  (loop [ [car & cdr ] (flatten (repeat nums))
+         freq 0
+         s #{}
+         ]
+    (if (contains? s freq)
+      freq
+      (recur cdr (+ freq car) (conj s freq )))
     ))
 
-()
+
 
 
 (defn part2-reduce [nums]

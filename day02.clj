@@ -18,6 +18,13 @@
        (catch Exception e nil)))
 
 
+(defn hasnumber [n i]
+  (map
+   (fn [x]
+     (map #(= n %) x)) i))
+     
+
+
 
 (defn part1 [input]
   (let [pp  (->> input
