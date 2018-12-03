@@ -19,9 +19,7 @@
 
 
 (defn hasnumber [n i]
-  (map
-   (fn [x]
-     (map #(= n %) x)) i))
+  (some true?(map #(= n %) i)))
      
 
 
