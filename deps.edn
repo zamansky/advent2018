@@ -4,12 +4,16 @@
         instaparse/instaparse {:mvn/version "1.4.10"}
         aocd/aocd {:mvn/version "0.1.1"}
         aysylu/loom {:mvn/version "1.0.2"} ;; graph algos
-        clj-http {:mvn/version "3.12.3"}
-        com.rpl/specter {:mvn/version "1.1.4"}
+                com.rpl/specter {:mvn/version "1.1.4"}
 	org.clojure/math.combinatorics {:mvn/version "0.2.0"}
-        aoc/aoc {:local/root "/home/zamansky/gh/aoc"}
         }
  
  :paths ["src" "data" "tests"]
+ :aliases {:dev {;; for disabling the official compiler
+                 :classpath-overrides {org.clojure/clojure nil}
+                 :extra-deps {com.github.flow-storm/clojure {:mvn/version "1.12.0-2"}
+                              com.github.flow-storm/flow-storm-dbg {:mvn/version "4.1.0"}}
+                 :jvm-opts ["-Dclojure.storm.instrumentEnable=true"
+                            "-Dclojure.storm.instrumentOnlyPrefixes=utils"]}}
  }
 
